@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('assets/html_table.jpg') center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4ec9f5; /* Primary blue */
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+}
+
+.navbar__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar__item {
+    margin-left: 1rem;
+}
+
+.navbar__item a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 620;
+    transition: color 0.3s;
+}
+
+.navbar__item a:hover {
+    color: #e0e7ff; /* Lighter blue */
+}
+
+canvas {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+}

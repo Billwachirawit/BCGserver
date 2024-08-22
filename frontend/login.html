@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authentication - Bottle Donation Machine</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="assets/logo.png" alt="Logo" class="navbar__logo">
+            <a href="index.html" class="navbar__title">Bottle donation machine dashboard</a>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item"><a href="data.html">Home</a></li>
+            <li class="navbar__item"><a href="Statistics.html">Statistics</a></li>
+            <li class="navbar__item"><a href="Price.html">Rewards</a></li>
+            <li class="navbar__item"><a href="login.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="select-container">
+        <h2 class="select-title">Choose an Option</h2>
+        <div class="button-group">
+            <button onclick="showLogin()" class="select-button">Login</button>
+            <button onclick="showRegister()" class="select-button">Register</button>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="login-form" class="auth-form hidden">
+            <h2 class="auth-title">Login</h2>
+            <div class="input-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="button" onclick="showSelection()" class="back-button">Back</button>
+            <button type="submit" class="auth-button">Login</button>
+        </form>
+
+        <form id="register-form" class="auth-form hidden">
+            <h2 class="auth-title">Create Account</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="button" onclick="showSelection()" class="back-button">Back</button>
+            <button type="submit" class="auth-button">Register</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
