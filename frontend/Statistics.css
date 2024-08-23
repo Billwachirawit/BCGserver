@@ -9,10 +9,13 @@ body {
     min-height: 100vh;
     background: url('assets/html_table.jpg') center / cover no-repeat;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 80px;
 }
 
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -67,7 +70,26 @@ body {
     color: #e0e7ff; /* Lighter blue */
 }
 
-canvas {
+/* Chart Container Styles */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.chart {
     width: 100%;
-    height: 400px; /* Adjust height as needed */
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+#piechart, #barchart {
+    border-radius: 10px;
 }

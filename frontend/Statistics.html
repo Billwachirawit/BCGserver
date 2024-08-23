@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bottle donation machine with recycling system</title>
+    <title>Bottle Donation Machine Dashboard</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <link rel="stylesheet" type="text/css" href="Statistics.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar__brand">
             <img src="assets/logo.png" alt="Logo" class="navbar__logo">
-            <a href="index.html" class="navbar__title">Bottle donation machine dashboard</a>
+            <a href="index.html" class="navbar__title">Bottle Donation Machine Dashboard</a>
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item"><a href="data.html">Home</a></li>
@@ -24,13 +24,110 @@
     </nav>
 
     <main>
-        <div style="width: 50%; margin: auto;">
-            <canvas id="myPieChart"></canvas>
-            <canvas id="myBarChart"></canvas>
+        <div class="chart-container">
+            <div id="piechart" class="chart"></div>
+            <div id="barchart" class="chart"></div>
         </div>
     </main>
 
-    <script src="Statistics.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            // Pie Chart Data
+            var pieData = google.visualization.arrayToDataTable([
+                ['Material', 'Percentage'],
+                ['Plastic', 30],
+                ['Glass', 20],
+                ['Metal', 15],
+                ['Paper', 25],
+                ['Others', 10]
+            ]);
+
+            // Pie Chart Options
+            var pieOptions = {
+                title: 'Recycling by Material',
+                titleTextStyle: {
+                    color: '#ffbc00',
+                    fontSize: 20,
+                    bold: true
+                },
+                backgroundColor: 'transparent',
+                is3D: true,
+                slices: {
+                    0: {color: '#ffbc00'},
+                    1: {color: '#4ec9f5'},
+                    2: {color: '#ffde59'},
+                    3: {color: '#b1e3fa'},
+                    4: {color: '#ff7f50'}
+                },
+                legend: {
+                    textStyle: {
+                        color: '#ffffff',
+                        fontSize: 14
+                    }
+                },
+                pieSliceTextStyle: {
+                    color: '#000000',
+                    fontSize: 14
+                }
+            };
+
+            // Bar Chart Data
+            var barData = google.visualization.arrayToDataTable([
+                ['Month', 'Recycled Items', { role: 'style' }],
+                ['January', 120, '#4ec9f5'],
+                ['February', 150, '#4ec9f5'],
+                ['March', 180, '#4ec9f5'],
+                ['April', 200, '#4ec9f5'],
+                ['May', 170, '#4ec9f5'],
+                ['June', 220, '#4ec9f5']
+            ]);
+
+            // Bar Chart Options
+            var barOptions = {
+                title: 'Monthly Recycled Items',
+                titleTextStyle: {
+                    color: '#ffbc00',
+                    fontSize: 20,
+                    bold: true
+                },
+                backgroundColor: 'transparent',
+                hAxis: {
+                    title: 'Month',
+                    titleTextStyle: {
+                        color: '#ffffff',
+                        fontSize: 16,
+                        bold: true
+                    },
+                    textStyle: {
+                        color: '#ffffff',
+                        fontSize: 14
+                    }
+                },
+                vAxis: {
+                    title: 'Number of Items',
+                    titleTextStyle: {
+                        color: '#ffffff',
+                        fontSize: 16,
+                        bold: true
+                    },
+                    textStyle: {
+                        color: '#ffffff',
+                        fontSize: 14
+                    }
+                },
+                legend: 'none'
+            };
+
+            // Create and draw the charts
+            var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+            pieChart.draw(pieData, pieOptions);
+
+            var barChart = new google.visualization.BarChart(document.getElementById('barchart'));
+            barChart.draw(barData, barOptions);
+        }
+    </script>
 </body>
 </html>
-

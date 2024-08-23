@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global styles (เหมือนกับที่ใช้ในหน้าก่อนหน้า) */
 * {
     margin: 0;
     padding: 0;
@@ -10,19 +10,18 @@ body {
     min-height: 100vh;
     background: url('assets/html_table.jpg') center / cover no-repeat;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: #333; /* Dark gray text for readability */
-    font-size: 1rem; /* Base font size */
-    line-height: 1.6; /* Increased line height for better readability */
+    justify-content: center;
+    padding-top: 4rem;
 }
 
-/* Navbar Styles */
+/* Navbar styles (เหมือนกับที่ใช้ในหน้าก่อนหน้า) */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4ec9f5; /* Primary blue */
+    background-color: #4ec9f5;
     color: #ffffff;
     padding: 0.8rem 1.2rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
@@ -54,12 +53,10 @@ body {
 .navbar__menu {
     list-style: none;
     display: flex;
-    margin-left: 0;
 }
 
 .navbar__item {
     margin-left: 1rem;
-    font-weight: 500;
 }
 
 .navbar__item a {
@@ -71,45 +68,88 @@ body {
 }
 
 .navbar__item a:hover {
-    color: #e0e7ff; /* Lighter blue */
+    color: #e0e7ff;
 }
 
-/* Main Content Styles */
-main {
-    margin: 2rem auto;
-    max-width: 900px;
-    padding: 1rem;
-    background-color: #ffffff; /* White background for content area */
-    border-radius: 8px; /* Rounded corners for the content area */
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); /* Subtle shadow around the content area */
-    margin-top:70px;
+
+/* Hero Section Styles */
+.hero {
+    background: url('assets/hero_background.jpg') center / cover no-repeat;
+    color: #ffffff;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
 }
 
-section {
+.hero__content {
+    background-color: rgba(78, 201, 245, 0.85); /* Light blue with slight transparency */
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+.hero__content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero__content p {
+    font-size: 1.25rem;
     margin-bottom: 2rem;
 }
 
-h1, h2 {
-    color: #4ec9f5; /* Primary blue for headings */
+.hero__button {
+    background-color: #ffbc00;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-h1 {
-    font-size: 2rem; /* Larger font size for main headings */
-    border-bottom: 2px solid #4ec9f5; /* Blue underline for main headings */
-    padding-bottom: 0.5rem;
+.hero__button:hover {
+    background-color: #ffde59;
+}
+
+/* Features Section Styles */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature__image {
+    width: 100px;
+    margin-bottom: 1.5rem;
+}
+
+.feature__title {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #4ec9f5;
 }
 
-h2 {
-    font-size: 1.5rem; /* Slightly smaller font size for subheadings */
-    margin-bottom: 0.5rem;
+.feature__description {
+    font-size: 1rem;
+    color: #555555;
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 2rem;
-}
-
-p {
-    margin-bottom: 1rem;
+/* Footer Styles */
+.footer {
+    background-color: #4ec9f5;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
 }
